@@ -23,8 +23,10 @@ def crawl(args):
     curr_post_id=list(client[args.db][args.collection].find().sort('post_id',-1).limit(1))
     if curr_post_id==[]:
         curr_post_id=1
+    else:
+        curr_post_id=curr_post_id[0]['id']
     
-    post_id=max(args.post_id,curr_post_id)
+    post_id=max(int(args.post_id),int(curr_post_id))
     while True:
         output=chrome_driver.anime_picture_crawl_from_post_id(post_id)
         
