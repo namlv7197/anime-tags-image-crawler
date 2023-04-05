@@ -21,7 +21,7 @@ def prepare(args):
 
 def crawl(args):
     chrome_driver,client=prepare(args)
-    curr_post_id=list(client[args.db][args.collection].find().sort('post_id',-1).limit(1))
+    curr_post_id=list(client[args.db][args.collection].find().sort('id',-1).limit(1))
     if curr_post_id==[]:
         curr_post_id=1
     else:
