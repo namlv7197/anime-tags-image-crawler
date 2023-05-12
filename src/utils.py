@@ -26,7 +26,7 @@ def crawl(args):
     if curr_post_id==[]:
         curr_post_id=1
     else:
-        curr_post_id=curr_post_id[0]['id']
+        curr_post_id=curr_post_id[0]['id']+1
 
     post_id=max(int(args.post_id),int(curr_post_id))
     while True:
